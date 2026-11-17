@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="jaBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0C10" />
+      <stop offset="50%" stop-color="#10141D" />
+      <stop offset="100%" stop-color="#08090C" />
+    </linearGradient>
+    <linearGradient id="jaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D77F" />
+      <stop offset="100%" stop-color="#C59B27" />
+    </linearGradient>
+    <linearGradient id="jaCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="jaGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="jaGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#jaBgGrad)" />
+
+  <!-- Subtle Grid -->
+  <g stroke="rgba(212,175,55,0.05)" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="160" y1="0" x2="160" y2="500" />
+    <line x1="320" y1="0" x2="320" y2="500" />
+    <line x1="480" y1="0" x2="480" y2="500" />
+    <line x1="640" y1="0" x2="640" y2="500" />
+  </g>
+
+  <!-- Ambient Glow -->
+  <circle cx="200" cy="180" r="140" fill="url(#jaCyan)" opacity="0.08" filter="url(#jaGlow)" />
+  <circle cx="620" cy="300" r="160" fill="url(#jaGold)" opacity="0.09" filter="url(#jaGlow)" />
+
+  <!-- Terminal Window Mockup -->
+  <g transform="translate(60, 45)">
+    <!-- Window Frame -->
+    <rect width="680" height="410" rx="14" fill="#0E121A" stroke="rgba(212,175,55,0.25)" stroke-width="1.2" />
+    
+    <!-- Header Bar -->
+    <rect width="680" height="42" rx="14" fill="#151A24" />
+    <circle cx="24" cy="21" r="5.5" fill="#EF4444" opacity="0.85" />
+    <circle cx="42" cy="21" r="5.5" fill="#F59E0B" opacity="0.85" />
+    <circle cx="60" cy="21" r="5.5" fill="#10B981" opacity="0.85" />
+    <text x="340" y="26" fill="#A0AEC0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" text-anchor="middle" letter-spacing="1">AI JOB ALERT ASSISTANT • AUTOMATION PIPELINE</text>
+
+    <!-- Step 1: Multi-API Job Harvester -->
+    <g transform="translate(24, 65)">
+      <rect width="195" height="130" rx="10" fill="#141824" stroke="rgba(56,189,248,0.3)" stroke-width="1" />
+      <rect x="12" y="12" width="28" height="28" rx="6" fill="url(#jaCyan)" />
+      <text x="26" y="31" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="bold" font-size="14" text-anchor="middle">📡</text>
+      <text x="48" y="30" fill="#F1F5F9" font-family="'Inter', sans-serif" font-weight="600" font-size="13">Multi-API Fetch</text>
+      <text x="14" y="62" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">● Adzuna API</text>
+      <text x="14" y="82" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">● JSearch RapidAPI</text>
+      <text x="14" y="102" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">● Jooble Portal</text>
+      <text x="14" y="124" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="10">Merged &amp; Deduplicated</text>
+    </g>
+
+    <!-- Flow Arrow 1 -->
+    <path d="M 225 130 L 255 130" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4 2" />
+
+    <!-- Step 2: Gemini AI Engine -->
+    <g transform="translate(260, 65)">
+      <rect width="205" height="130" rx="10" fill="#161B27" stroke="rgba(212,175,55,0.45)" stroke-width="1" />
+      <rect x="12" y="12" width="28" height="28" rx="6" fill="url(#jaGold)" />
+      <text x="26" y="30" fill="#0A0A0A" font-family="'Inter', sans-serif" font-weight="bold" font-size="13" text-anchor="middle">✦</text>
+      <text x="48" y="30" fill="#F1F5F9" font-family="'Inter', sans-serif" font-weight="600" font-size="13">Gemini AI Parser</text>
+      <text x="14" y="62" fill="#D4AF37" font-family="'JetBrains Mono', monospace" font-size="11">&gt; Summarize role &amp; skills</text>
+      <text x="14" y="82" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">&gt; Relevance scoring: 98%</text>
+      <text x="14" y="102" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">&gt; Match: AI / Python roles</text>
+      <text x="14" y="124" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="10">● Synthesis Complete</text>
+    </g>
+
+    <!-- Flow Arrow 2 -->
+    <path d="M 470 130 L 495 130" stroke="#D4AF37" stroke-width="2" stroke-dasharray="4 2" />
+
+    <!-- Step 3: GitHub Actions & SMTP Dispatch -->
+    <g transform="translate(500, 65)">
+      <rect width="156" height="130" rx="10" fill="#141824" stroke="rgba(52,211,153,0.3)" stroke-width="1" />
+      <rect x="12" y="12" width="28" height="28" rx="6" fill="url(#jaGreen)" />
+      <text x="26" y="30" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="bold" font-size="13" text-anchor="middle">✉</text>
+      <text x="48" y="30" fill="#F1F5F9" font-family="'Inter', sans-serif" font-weight="600" font-size="13">Email Dispatch</text>
+      <text x="14" y="62" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">● Cron: Scheduled</text>
+      <text x="14" y="82" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">● GitHub Actions</text>
+      <text x="14" y="102" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">● Gmail SMTP</text>
+      <text x="14" y="124" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="10">HTML Alert Sent ✓</text>
+    </g>
+
+    <!-- Live Execution Console Log -->
+    <g transform="translate(24, 215)">
+      <rect width="632" height="175" rx="8" fill="#0A0C12" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+      <text x="18" y="30" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="12">$ python -m src.job_crawler --run-pipeline</text>
+      <text x="18" y="55" fill="#64748B" font-family="'JetBrains Mono', monospace" font-size="11">[2026-11-17 08:00:02] [INFO] Querying Adzuna, JSearch, and Jooble endpoints...</text>
+      <text x="18" y="77" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11">[2026-11-17 08:00:04] [SUCCESS] Fetched 142 listings | Deduplicated: 86 unique opportunities</text>
+      <text x="18" y="99" fill="#D4AF37" font-family="'JetBrains Mono', monospace" font-size="11">[2026-11-17 08:00:06] [GEMINI AI] Generating structured digest for AI Engineer roles...</text>
+      <text x="18" y="121" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">[2026-11-17 08:00:08] [SMTP] Rendering responsive HTML email template with job cards</text>
+      <text x="18" y="143" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">[2026-11-17 08:00:09] [SUCCESS] Job alert broadcast dispatched successfully via Gmail SMTP (Status: 250 OK)</text>
+      <text x="18" y="165" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">&gt; Pipeline completed in 7.42s | Next automated run scheduled</text>
+    </g>
+  </g>
+</svg>

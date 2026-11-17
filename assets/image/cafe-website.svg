@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cafeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0C0F14" />
+      <stop offset="50%" stop-color="#141922" />
+      <stop offset="100%" stop-color="#0A0B0E" />
+    </linearGradient>
+    <linearGradient id="cafeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D77F" />
+      <stop offset="100%" stop-color="#C59B27" />
+    </linearGradient>
+    <linearGradient id="cafeAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+    <filter id="cafeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#cafeBg)" />
+
+  <!-- Ambient Glow -->
+  <circle cx="200" cy="220" r="160" fill="url(#cafeAmber)" opacity="0.08" filter="url(#cafeGlow)" />
+  <circle cx="620" cy="260" r="150" fill="url(#cafeGold)" opacity="0.07" filter="url(#cafeGlow)" />
+
+  <!-- Browser Frame Mockup -->
+  <g transform="translate(60, 40)">
+    <rect width="680" height="420" rx="14" fill="#121620" stroke="rgba(212,175,55,0.25)" stroke-width="1.2" />
+    
+    <!-- Header / Navbar -->
+    <rect width="680" height="48" rx="14" fill="#181E2B" />
+    <circle cx="24" cy="24" r="5" fill="#EF4444" opacity="0.85" />
+    <circle cx="42" cy="24" r="5" fill="#F59E0B" opacity="0.85" />
+    <circle cx="60" cy="24" r="5" fill="#10B981" opacity="0.85" />
+    
+    <!-- Cafe Brand -->
+    <text x="95" y="30" fill="#D4AF37" font-family="'Playfair Display', serif" font-weight="bold" font-size="16">MD FOODIES CAFE</text>
+    
+    <!-- Nav Links Mockup -->
+    <text x="350" y="29" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Menu</text>
+    <text x="410" y="29" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Specials</text>
+    <text x="480" y="29" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">About</text>
+    
+    <!-- Cart Pill -->
+    <rect x="560" y="12" width="95" height="26" rx="13" fill="#1F2637" stroke="rgba(212,175,55,0.3)" stroke-width="1" />
+    <text x="590" y="29" fill="#F1F5F9" font-family="'Inter', sans-serif" font-size="11">🛒 Cart (3)</text>
+    <circle cx="640" cy="25" r="4" fill="#10B981" />
+
+    <!-- Hero Banner Inside Mockup -->
+    <g transform="translate(24, 65)">
+      <rect width="632" height="105" rx="10" fill="#1A202E" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+      <text x="24" y="42" fill="#FFFFFF" font-family="'Playfair Display', serif" font-weight="bold" font-size="22">Artisanal Coffee &amp; Gourmet Bites</text>
+      <text x="24" y="68" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Crafted with fresh organic ingredients, ordered online with real-time cart</text>
+      <rect x="24" y="80" width="110" height="18" rx="9" fill="url(#cafeGold)" />
+      <text x="79" y="93" fill="#0A0A0A" font-family="'Inter', sans-serif" font-weight="bold" font-size="9" text-anchor="middle">EXPLORE MENU</text>
+    </g>
+
+    <!-- Product Cards Grid Inside Mockup -->
+    <!-- Item 1 -->
+    <g transform="translate(24, 185)">
+      <rect width="195" height="150" rx="10" fill="#151A26" stroke="rgba(212,175,55,0.2)" stroke-width="1" />
+      <rect x="15" y="15" width="165" height="60" rx="8" fill="#202638" />
+      <text x="97" y="52" fill="#D4AF37" font-family="'Inter', sans-serif" font-size="24" text-anchor="middle">☕</text>
+      <text x="18" y="96" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="600" font-size="12">Caramel Macchiato</text>
+      <text x="18" y="114" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Double espresso &amp; syrup</text>
+      <text x="18" y="132" fill="#D4AF37" font-family="'Inter', sans-serif" font-weight="bold" font-size="12">$4.80</text>
+      <rect x="135" y="118" width="45" height="20" rx="6" fill="#D4AF37" />
+      <text x="157" y="132" fill="#0A0A0A" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">+ Add</text>
+    </g>
+
+    <!-- Item 2 -->
+    <g transform="translate(242, 185)">
+      <rect width="195" height="150" rx="10" fill="#151A26" stroke="rgba(212,175,55,0.2)" stroke-width="1" />
+      <rect x="15" y="15" width="165" height="60" rx="8" fill="#202638" />
+      <text x="97" y="52" fill="#D4AF37" font-family="'Inter', sans-serif" font-size="24" text-anchor="middle">🥐</text>
+      <text x="18" y="96" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="600" font-size="12">Butter Croissant</text>
+      <text x="18" y="114" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Fresh flaky pastry</text>
+      <text x="18" y="132" fill="#D4AF37" font-family="'Inter', sans-serif" font-weight="bold" font-size="12">$3.50</text>
+      <rect x="135" y="118" width="45" height="20" rx="6" fill="#D4AF37" />
+      <text x="157" y="132" fill="#0A0A0A" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">+ Add</text>
+    </g>
+
+    <!-- Item 3 / Cart Summary -->
+    <g transform="translate(460, 185)">
+      <rect width="195" height="150" rx="10" fill="#151A26" stroke="rgba(212,175,55,0.3)" stroke-width="1" />
+      <text x="18" y="32" fill="#D4AF37" font-family="'Inter', sans-serif" font-weight="bold" font-size="12">ORDER SUMMARY</text>
+      <text x="18" y="56" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">2x Caramel Macchiato</text>
+      <text x="160" y="56" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10">$9.60</text>
+      <text x="18" y="76" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">1x Butter Croissant</text>
+      <text x="160" y="76" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10">$3.50</text>
+      <line x1="18" y1="92" x2="175" y2="92" stroke="rgba(255,255,255,0.1)" />
+      <text x="18" y="112" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="600" font-size="11">Total: $13.10</text>
+      <rect x="18" y="122" width="160" height="20" rx="6" fill="url(#cafeGold)" />
+      <text x="98" y="136" fill="#0A0A0A" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">CHECKOUT NOW</text>
+    </g>
+
+    <!-- Footer Bar inside Mockup -->
+    <g transform="translate(24, 350)">
+      <rect width="632" height="50" rx="8" fill="#0F131C" />
+      <text x="24" y="30" fill="#64748B" font-family="'Inter', sans-serif" font-size="11">● Pure HTML5 / CSS3 / Vanilla JS • Responsive Cart Engine • Multi-Screen Optimized</text>
+    </g>
+  </g>
+</svg>
