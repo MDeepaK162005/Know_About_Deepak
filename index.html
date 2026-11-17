@@ -1212,6 +1212,106 @@
             transform: scale(1.05);
         }
 
+        /* ============================================ */
+        /* IRELAND PROJECT IMAGE BANNER OVERLAY         */
+        /* ============================================ */
+        .ireland-image-banner {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 24px 26px;
+            background: linear-gradient(135deg, rgba(8, 8, 8, 0.88) 0%, rgba(8, 8, 8, 0.6) 42%, rgba(8, 8, 8, 0) 80%);
+            transition: opacity 0.3s ease;
+        }
+
+        .ireland-banner-content {
+            max-width: 82%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .ireland-banner-title {
+            font-family: var(--font-display), 'Playfair Display', Georgia, serif;
+            font-size: clamp(16px, 2.4vw, 26px);
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.8px;
+            line-height: 1.1;
+            margin: 0;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 0 24px rgba(212, 175, 55, 0.35);
+        }
+
+        .ireland-banner-subtitle {
+            font-family: var(--font-body), 'Inter', sans-serif;
+            font-size: clamp(11px, 1.4vw, 14.5px);
+            font-weight: 600;
+            color: #FFFFFF;
+            letter-spacing: 0.2px;
+            line-height: 1.25;
+            margin: 4px 0 0 0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+        }
+
+        .ireland-banner-bar {
+            width: 32px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 5px 0 6px 0;
+            border-radius: 2px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .ireland-banner-desc {
+            font-family: var(--font-body), 'Inter', sans-serif;
+            font-size: clamp(9px, 1.05vw, 11.5px);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.35;
+            margin: 0;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95);
+        }
+
+        .ireland-image-banner ~ .project-overlay {
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+
+        @media (max-width: 768px) {
+            .ireland-image-banner {
+                padding: 14px 16px;
+            }
+            .ireland-banner-content {
+                max-width: 86%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ireland-image-banner {
+                padding: 10px 12px;
+            }
+            .ireland-banner-bar {
+                margin: 4px 0 5px 0;
+                width: 24px;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .ireland-image-banner ~ .project-overlay {
+                background: transparent;
+                pointer-events: none;
+            }
+            .ireland-image-banner ~ .project-overlay .project-links a {
+                pointer-events: auto;
+            }
+        }
+
         .project-overlay {
             position: absolute;
             inset: 0;
@@ -1633,6 +1733,13 @@
             font-size: 15px;
             margin: 0;
             font-weight: 500;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .contact-item p a {
+            overflow-wrap: anywhere;
+            word-break: break-word;
         }
 
         .contact-social {
@@ -1922,6 +2029,19 @@
             transition: width 0.1s;
         }
 
+        /* ========== ACCESSIBILITY HELPER ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         /* ========== PREMIUM CURSOR - MILD ========== */
         .cursor-dot {
             position: fixed;
@@ -1930,7 +2050,7 @@
             background: var(--gold);
             border-radius: 50%;
             pointer-events: none;
-            z-index: 99999;
+            z-index: 10000000;
             transform: translate(-50%, -50%);
             transition: width 0.25s ease, height 0.25s ease, background 0.3s ease;
             box-shadow: 0 0 12px var(--gold-glow);
@@ -1949,7 +2069,7 @@
             border: 1.5px solid var(--gold);
             border-radius: 50%;
             pointer-events: none;
-            z-index: 99998;
+            z-index: 9999999;
             transform: translate(-50%, -50%);
             transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -3362,6 +3482,14 @@
                     <div class="project-card" data-category="client web" data-aos="fade-up">
                         <div class="project-image">
                             <img src="assets/image/ireland-course-search.png" alt="Ireland University &amp; Course Search Portal" />
+                            <div class="ireland-image-banner" aria-hidden="true">
+                                <div class="ireland-banner-content">
+                                    <div class="ireland-banner-title">Ireland</div>
+                                    <div class="ireland-banner-subtitle">University &amp; Course Search Portal</div>
+                                    <div class="ireland-banner-bar"></div>
+                                    <div class="ireland-banner-desc">Discover Universities, Courses &amp; Opportunities in Ireland</div>
+                                </div>
+                            </div>
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="https://github.com/MDeepaK162005/aspire-course-search-Demo" target="_blank" rel="noopener noreferrer" aria-label="View GitHub Repository" title="View GitHub Repository"><i class="fab fa-github"></i></a>
@@ -3635,10 +3763,21 @@
                     </div>
                     <div class="contact-form" data-aos="fade-left">
                         <form id="contactForm">
-                            <div class="form-group"><input type="text" placeholder="Your Name" required /></div>
-                            <div class="form-group"><input type="email" placeholder="Your Email" required /></div>
-                            <div class="form-group"><input type="text" placeholder="Subject" /></div>
-                            <div class="form-group"><textarea placeholder="Your Message" rows="5" required></textarea>
+                            <div class="form-group">
+                                <label for="contactName" class="sr-only">Your Name</label>
+                                <input type="text" id="contactName" name="name" placeholder="Your Name" required autocomplete="name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail" class="sr-only">Your Email</label>
+                                <input type="email" id="contactEmail" name="email" placeholder="Your Email" required autocomplete="email" />
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject" class="sr-only">Subject</label>
+                                <input type="text" id="contactSubject" name="subject" placeholder="Subject" autocomplete="off" />
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage" class="sr-only">Your Message</label>
+                                <textarea id="contactMessage" name="message" placeholder="Your Message" rows="5" required></textarea>
                             </div>
                             <button type="submit" class="btn-gold btn-full"><i class="fas fa-paper-plane"></i> Send
                                 Message</button>
@@ -3870,14 +4009,17 @@
             if (existing) {
                 existing.style.opacity = '0';
                 existing.style.transform = 'scale(0.9)';
-                setTimeout(() => existing.remove(), 500);
+                setTimeout(() => existing.remove(), 400);
             }
 
             const notification = document.createElement('div');
             notification.className = 'grand-notification';
+            notification.setAttribute('role', 'alertdialog');
+            notification.setAttribute('aria-modal', 'true');
+            notification.setAttribute('aria-label', type === 'success' ? 'Message Sent Successfully' : 'Submission Alert');
             notification.innerHTML = `
                 <div class="grand-notification-content">
-                    <button class="grand-close" onclick="this.closest('.grand-notification').remove()">
+                    <button class="grand-close" type="button" aria-label="Close notification" onclick="this.closest('.grand-notification').remove()">
                         <i class="fas fa-times"></i>
                     </button>
                     <div class="grand-icon ${type}">
@@ -3888,7 +4030,7 @@
                         <p>${message}</p>
                     </div>
                     <div class="grand-actions">
-                        <button class="grand-btn-primary" onclick="this.closest('.grand-notification').remove()">
+                        <button class="grand-btn-primary" type="button" onclick="this.closest('.grand-notification').remove()">
                             <i class="fas fa-thumbs-up"></i> Got It!
                         </button>
                         ${type === 'success' ? `
@@ -3907,42 +4049,49 @@
                     .grand-notification {
                         position: fixed; top: 0; left: 0; width: 100%; height: 100%;
                         background: rgba(0,0,0,0.85); backdrop-filter: blur(20px);
+                        -webkit-backdrop-filter: blur(20px);
                         display: flex; align-items: center; justify-content: center;
-                        z-index: 999999; animation: grandFadeIn 0.5s ease; padding: 20px;
+                        z-index: 999990; animation: grandFadeIn 0.4s ease;
+                        padding: 20px 16px; overflow-y: auto; overscroll-behavior: contain;
+                        cursor: default;
                     }
                     @keyframes grandFadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
                     @keyframes grandPopIn {
-                        0% { opacity: 0; transform: scale(0.8) translateY(40px); }
+                        0% { opacity: 0; transform: scale(0.85) translateY(30px); }
                         100% { opacity: 1; transform: scale(1) translateY(0); }
                     }
                     .grand-notification-content {
-                        position: relative; max-width: 540px; width: 100%;
-                        padding: 50px 40px 40px;
+                        position: relative; max-width: 520px; width: 100%;
+                        max-height: calc(100vh - 40px); overflow-y: auto; margin: auto;
+                        padding: 45px 36px 36px;
                         background: linear-gradient(145deg, #1A1A1A, #0A0A0A);
                         border-radius: 24px;
-                        border: 1.5px solid rgba(212, 175, 55, 0.3);
-                        box-shadow: 0 30px 80px rgba(0,0,0,0.8), 0 0 60px rgba(212, 175, 55, 0.1);
+                        border: 1.5px solid rgba(212, 175, 55, 0.35);
+                        box-shadow: 0 30px 80px rgba(0,0,0,0.85), 0 0 60px rgba(212, 175, 55, 0.15);
                         text-align: center;
-                        animation: grandPopIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-                        overflow: hidden;
+                        animation: grandPopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+                        word-break: break-word;
+                        cursor: default;
                     }
                     .grand-close {
                         position: absolute; top: 16px; right: 16px;
-                        width: 36px; height: 36px;
-                        background: rgba(255,255,255,0.05);
-                        border: 1px solid rgba(255,255,255,0.08);
-                        border-radius: 50%; color: #999; font-size: 16px;
+                        width: 38px; height: 38px;
+                        background: rgba(255,255,255,0.06);
+                        border: 1px solid rgba(255,255,255,0.1);
+                        border-radius: 50%; color: #BBB; font-size: 16px;
                         cursor: pointer; transition: all 0.3s ease;
+                        display: flex; align-items: center; justify-content: center;
+                        touch-action: manipulation;
                     }
                     .grand-close:hover {
-                        background: rgba(212, 175, 55, 0.15);
+                        background: rgba(212, 175, 55, 0.2);
                         border-color: #D4AF37; color: #D4AF37;
                         transform: rotate(90deg);
                     }
                     .grand-icon {
-                        width: 80px; height: 80px;
+                        width: 76px; height: 76px;
                         display: flex; align-items: center; justify-content: center;
-                        margin: 0 auto 20px; border-radius: 50%; font-size: 36px;
+                        margin: 0 auto 18px; border-radius: 50%; font-size: 34px;
                         animation: grandIconPulse 2s ease-in-out infinite;
                     }
                     @keyframes grandIconPulse {
@@ -3951,67 +4100,71 @@
                     }
                     .grand-icon.success {
                         background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
-                        border: 2px solid rgba(212, 175, 55, 0.3);
-                        box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+                        border: 2px solid rgba(212, 175, 55, 0.35);
+                        box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
                     }
-                    .grand-icon.success i { color: #D4AF37; text-shadow: 0 0 30px rgba(212, 175, 55, 0.3); }
+                    .grand-icon.success i { color: #D4AF37; text-shadow: 0 0 30px rgba(212, 175, 55, 0.35); }
                     .grand-icon.error {
                         background: linear-gradient(135deg, rgba(255, 82, 82, 0.2), rgba(255, 82, 82, 0.05));
-                        border: 2px solid rgba(255, 82, 82, 0.3);
-                        box-shadow: 0 0 40px rgba(255, 82, 82, 0.15);
+                        border: 2px solid rgba(255, 82, 82, 0.35);
+                        box-shadow: 0 0 40px rgba(255, 82, 82, 0.2);
                     }
-                    .grand-icon.error i { color: #FF5252; text-shadow: 0 0 30px rgba(255, 82, 82, 0.3); }
+                    .grand-icon.error i { color: #FF5252; text-shadow: 0 0 30px rgba(255, 82, 82, 0.35); }
                     .grand-text h4 {
-                        font-family: 'Playfair Display', serif;
-                        font-size: 28px; font-weight: 800; color: #FFFFFF;
-                        margin: 0 0 10px;
+                        font-family: var(--font-display), 'Playfair Display', serif;
+                        font-size: clamp(22px, 4.5vw, 28px); font-weight: 800; color: #FFFFFF;
+                        margin: 0 0 10px; line-height: 1.25;
                     }
                     .grand-text p {
-                        font-family: 'Inter', sans-serif;
-                        font-size: 16px; color: #CCCCCC;
-                        line-height: 1.7; margin: 0; font-weight: 300;
+                        font-family: var(--font-body), 'Inter', sans-serif;
+                        font-size: clamp(13.5px, 2.5vw, 15.5px); color: #CCCCCC;
+                        line-height: 1.65; margin: 0; font-weight: 300;
                     }
                     .grand-actions {
                         display: flex; gap: 12px; justify-content: center;
-                        margin-top: 28px; flex-wrap: wrap;
+                        margin-top: 26px; flex-wrap: wrap;
                     }
                     .grand-btn-primary {
-                        padding: 12px 32px;
+                        padding: 12px 30px;
                         background: linear-gradient(135deg, #D4AF37, #B8962E);
                         color: #0A0A0A;
-                        font-family: 'Inter', sans-serif;
+                        font-family: var(--font-body), 'Inter', sans-serif;
                         font-weight: 700; font-size: 14px;
                         border: none; border-radius: 50px;
                         cursor: pointer; transition: all 0.3s ease;
                         display: inline-flex; align-items: center; gap: 8px;
+                        min-height: 44px; touch-action: manipulation;
                     }
                     .grand-btn-primary:hover {
                         transform: translateY(-2px);
-                        box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+                        box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
                     }
                     .grand-btn-secondary {
-                        padding: 12px 32px;
+                        padding: 12px 30px;
                         background: transparent;
                         color: #D4AF37;
-                        font-family: 'Inter', sans-serif;
+                        font-family: var(--font-body), 'Inter', sans-serif;
                         font-weight: 600; font-size: 14px;
-                        border: 1.5px solid rgba(212, 175, 55, 0.3);
+                        border: 1.5px solid rgba(212, 175, 55, 0.4);
                         border-radius: 50px;
                         cursor: pointer; transition: all 0.3s ease;
                         display: inline-flex; align-items: center; gap: 8px;
-                        text-decoration: none;
+                        text-decoration: none; min-height: 44px;
+                        touch-action: manipulation;
                     }
                     .grand-btn-secondary:hover {
-                        background: rgba(212, 175, 55, 0.1);
+                        background: rgba(212, 175, 55, 0.12);
                         border-color: #D4AF37;
                         transform: translateY(-2px);
                     }
                     @media (max-width: 480px) {
-                        .grand-notification-content { padding: 35px 24px 30px; border-radius: 18px; }
-                        .grand-icon { width: 60px; height: 60px; font-size: 28px; }
-                        .grand-text h4 { font-size: 22px; }
-                        .grand-text p { font-size: 14px; }
-                        .grand-actions { flex-direction: column; align-items: center; }
+                        .grand-notification-content {
+                            padding: 32px 20px 24px;
+                            border-radius: 18px;
+                            max-height: calc(100vh - 24px);
+                        }
+                        .grand-icon { width: 58px; height: 58px; font-size: 26px; margin-bottom: 14px; }
+                        .grand-actions { flex-direction: column; align-items: stretch; width: 100%; gap: 10px; }
                         .grand-btn-primary, .grand-btn-secondary { width: 100%; justify-content: center; }
                     }
                 `;
@@ -4025,7 +4178,7 @@
                 if (notif) {
                     notif.style.opacity = '0';
                     notif.style.transform = 'scale(0.9)';
-                    setTimeout(() => notif.remove(), 500);
+                    setTimeout(() => notif.remove(), 400);
                 }
             }, 8000);
         }
@@ -4041,15 +4194,23 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('contactForm');
+            let isSubmitting = false;
 
             if (form) {
                 form.addEventListener('submit', function (e) {
                     e.preventDefault();
 
-                    const name = this.querySelector('input[placeholder="Your Name"]')?.value || '';
-                    const email = this.querySelector('input[placeholder="Your Email"]')?.value || '';
-                    const subject = this.querySelector('input[placeholder="Subject"]')?.value || 'Hiring Process - Deepak';
-                    const message = this.querySelector('textarea')?.value || '';
+                    if (isSubmitting) return;
+
+                    const nameInput = this.querySelector('#contactName');
+                    const emailInput = this.querySelector('#contactEmail');
+                    const subjectInput = this.querySelector('#contactSubject');
+                    const messageInput = this.querySelector('#contactMessage');
+
+                    const name = nameInput?.value.trim() || '';
+                    const email = emailInput?.value.trim() || '';
+                    const subject = subjectInput?.value.trim() || 'Hiring Process - Deepak';
+                    const message = messageInput?.value.trim() || '';
 
                     if (!name || !email || !message) {
                         showGrandNotification('Please fill in all fields.', 'error');
@@ -4058,8 +4219,11 @@
 
                     const submitBtn = this.querySelector('button[type="submit"]');
                     const originalText = submitBtn.innerHTML;
+
+                    isSubmitting = true;
                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                    submitBtn.disabled = true;
+                    submitBtn.setAttribute('aria-busy', 'true');
+                    submitBtn.style.pointerEvents = 'none';
 
                     const templateParams = {
                         name: name,
@@ -4081,8 +4245,10 @@
                                 'success'
                             );
                             form.reset();
+                            isSubmitting = false;
                             submitBtn.innerHTML = originalText;
-                            submitBtn.disabled = false;
+                            submitBtn.removeAttribute('aria-busy');
+                            submitBtn.style.pointerEvents = '';
                         })
                         .catch(function (error) {
                             console.error('❌ Email sending failed:', error);
@@ -4090,59 +4256,112 @@
                                 '⚠️ Oops! Something went wrong. Please try again or email me directly at deepakmohan705@gmail.com',
                                 'error'
                             );
+                            isSubmitting = false;
                             submitBtn.innerHTML = originalText;
-                            submitBtn.disabled = false;
+                            submitBtn.removeAttribute('aria-busy');
+                            submitBtn.style.pointerEvents = '';
                         });
                 });
             }
         });
 
         // ============================================
-        // MILD CURSOR
+        // MILD CURSOR - WITH EVENT DELEGATION
         // ============================================
         (function () {
             const dot = document.getElementById('cursorDot');
             const ring = document.getElementById('cursorRing');
+            if (!dot || !ring) return;
+
             let mouseX = -100,
                 mouseY = -100;
             let ringX = -100,
                 ringY = -100;
+
+            function isTouchOrSmallScreen() {
+                return window.innerWidth <= 1024 || window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+            }
+
+            function updateCursorDisplay() {
+                if (isTouchOrSmallScreen()) {
+                    dot.style.display = 'none';
+                    ring.style.display = 'none';
+                } else {
+                    dot.style.display = '';
+                    ring.style.display = '';
+                }
+            }
+
+            updateCursorDisplay();
+            window.addEventListener('resize', updateCursorDisplay);
 
             document.addEventListener('mousemove', function (e) {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
                 dot.style.left = mouseX + 'px';
                 dot.style.top = mouseY + 'px';
+
+                // Guarantee cursor visibility whenever moving within the viewport
+                if (!isTouchOrSmallScreen()) {
+                    if (dot.style.opacity !== '1') {
+                        dot.style.opacity = '1';
+                    }
+                    if (ring.style.opacity !== '') {
+                        ring.style.opacity = '';
+                    }
+                }
             });
 
             function animateRing() {
-                ringX += (mouseX - ringX) * 0.12;
-                ringY += (mouseY - ringY) * 0.12;
+                ringX += (mouseX - ringX) * 0.15;
+                ringY += (mouseY - ringY) * 0.15;
                 ring.style.left = ringX + 'px';
                 ring.style.top = ringY + 'px';
                 requestAnimationFrame(animateRing);
             }
             animateRing();
 
-            document.querySelectorAll('a, button, .project-card, .skill-card, .service-card, .cert-card, .tech-item')
-                .forEach(el => {
-                    el.addEventListener('mouseenter', () => {
-                        dot.classList.add('hover');
-                        ring.classList.add('hover');
-                    });
-                    el.addEventListener('mouseleave', () => {
-                        dot.classList.remove('hover');
-                        ring.classList.remove('hover');
-                    });
-                });
+            // Event delegation so newly added/dynamic elements (like modal buttons, contact items) are supported
+            const interactiveSelector = 'a, button, input[type="submit"], input[type="button"], [role="button"], .project-card, .skill-card, .service-card, .cert-card, .tech-item, .grand-close, .grand-btn-primary, .grand-btn-secondary, .filter-btn, .tool-filter-btn, .contact-social a, .contact-item a';
 
-            document.addEventListener('mousedown', () => ring.classList.add('click'));
-            document.addEventListener('mouseup', () => ring.classList.remove('click'));
+            document.addEventListener('mouseover', function (e) {
+                if (e.target.closest(interactiveSelector)) {
+                    dot.classList.add('hover');
+                    ring.classList.add('hover');
+                }
+            });
 
-            if (window.innerWidth <= 1024 || window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
-                dot.style.display = 'none';
-                ring.style.display = 'none';
-            }
+            document.addEventListener('mouseout', function (e) {
+                if (e.target.closest(interactiveSelector)) {
+                    dot.classList.remove('hover');
+                    ring.classList.remove('hover');
+                }
+            });
+
+            document.addEventListener('mousedown', function () {
+                ring.classList.add('click');
+            });
+
+            document.addEventListener('mouseup', function () {
+                ring.classList.remove('click');
+            });
+
+            document.addEventListener('mouseenter', function () {
+                if (!isTouchOrSmallScreen()) {
+                    dot.style.opacity = '1';
+                    ring.style.opacity = '';
+                }
+            });
+
+            document.addEventListener('mouseleave', function (e) {
+                // Only hide when the cursor genuinely exits the browser window boundaries
+                if (!e.relatedTarget && !e.toElement) {
+                    if (e.clientY <= 0 || e.clientX <= 0 || e.clientX >= window.innerWidth || e.clientY >= window.innerHeight) {
+                        dot.style.opacity = '0';
+                        ring.style.opacity = '0';
+                    }
+                }
+            });
         })();
 
         console.log('✨ Deepak AI Portfolio loaded!');
